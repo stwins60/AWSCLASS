@@ -1,0 +1,38 @@
+class Calculator:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def add(self):
+        return self.x + self.y
+
+    def substract(self):
+        return self.x - self.y
+
+    
+class Cost(Calculator):
+    def __init__(self, x=0, y=0):
+        super().__init__(x, y)
+
+    def costOfFood(self):
+        return f"The cost of food is {self.add()}"
+
+
+cost1 = Cost(5,25)
+
+print(cost1.costOfFood())
+
+firstNum = int(input("Enter the first number: "))
+symbol = input("Enter the operator(+,-,/,*): ")
+secondNum = int(input("Enter the second number: "))
+
+cal = Calculator(firstNum, secondNum)
+
+if symbol == "+":
+    print(f"The result of {firstNum} {symbol} {secondNum} is {cal.add()}")
+
+elif symbol == "-":
+    print(f"The result of {firstNum} {symbol} {secondNum} is {cal.substract()}")
+
+else:
+    print("Invalid Input")
